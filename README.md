@@ -31,4 +31,22 @@ so if you wrote that `SELECT * FROM USERS` which schema will the engine looks in
 
 `SET search_path TO user_name,default_schema_name`
 
-The above line tells postgres to access the `public` schema if no schema provided but if the user name was `user`
+The above line tells postgres to access the `public` schema if no schema provided only if the user name was `user`
+
+---
+
+## Routing Schema Access
+
+Our Goal is to isolate each file with its own schema to make test operations on
+
+### Stargety for Isolation
+
+connect to pg as normal
+generate a random string of chars
+create a new user (role) with that name, 'zxcv'
+create a new schema with that name 'zxcv'
+tell our test file to connect to the db with that name 'zxcv'
+
+---
+
+## programatic schema creating
