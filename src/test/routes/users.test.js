@@ -13,6 +13,10 @@ beforeAll(() => {
   });
 });
 
+afterAll(() => {
+  pool.close();
+});
+
 it("create a user", async () => {
   const startingCount = await UserRepo.count();
 
@@ -21,6 +25,6 @@ it("create a user", async () => {
     .send({ username: "testuser", bio: "test bio" })
     .expect(200);
 
-  const finishCount = await UserRepo.count();
-  expect(finishCount - startCount).toEqual(1);
+  const finishingCount = await UserRepo.count();
+  expect(finishingCount - startingCount).toEqual(1);
 });
