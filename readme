@@ -1,0 +1,7 @@
+To run the migration in  the ** windows powershell ** 
+ just type the following
+
+ `$env:DATABASE_URL="postgres://*your database username*:*your database password * @localhost/*your database name*"; npm run migrate up
+
+
+
